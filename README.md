@@ -72,6 +72,7 @@ Client receives analytics JSON
   "type": "credit",
   "timestamp": "2026-01-10T14:00:00Z"
 }
+```
 🗓️ Project Timeline & Implementation
 Day 1 — Bank Simulator (Local)
 
@@ -166,6 +167,7 @@ Why this matters:
 Lambda does not have database access by default. IAM permissions must be explicitly granted following the principle of least privilege.
 
 IAM Inline Policy:
+```
 
 {
   "Version": "2012-10-17",
@@ -179,7 +181,7 @@ IAM Inline Policy:
   ]
 }
 
-
+```
 Policy name: TransactionProcessorDDBWrite
 
 Step 4 — Lambda Code (Store Transactions)
