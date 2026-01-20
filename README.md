@@ -73,6 +73,7 @@ Client receives analytics JSON
   "timestamp": "2026-01-10T14:00:00Z"
 }
 ```
+---
 🗓️ Project Timeline & Implementation
 ### Day 1 — Bank Simulator (Local)
 
@@ -90,6 +91,8 @@ Added optional looping to simulate multiple transactions per second
 
 Deliverable:
 ✔️ A working bank simulator capable of sending valid transaction payloads.
+
+---
 
 ### Day 2 — API Gateway & Lambda Setup
 
@@ -137,6 +140,7 @@ Execution role: Create new role with basic Lambda permissions
 
 Click Create function
 
+--- 
 ### 📊 Day 3 — Data Storage & Analytics
 Step 2 — Create DynamoDB Table
 
@@ -161,6 +165,8 @@ Region: us-east-2
 
 Click Create table
 
+---
+
 ### Step 3 — Grant Lambda Write Permissions
 
 Why this matters:
@@ -183,6 +189,8 @@ IAM Inline Policy:
 
 ```
 Policy name: TransactionProcessorDDBWrite
+
+---
 
 ### Step 4 — Lambda Code (Store Transactions)
 
@@ -242,6 +250,8 @@ def lambda_handler(event, context):
         'body': json.dumps({'message': 'Transaction stored successfully'})
     }
 ```
+---
+
 ### Step 5 — Environment Variables
 
 Add the following to the Lambda configuration:
