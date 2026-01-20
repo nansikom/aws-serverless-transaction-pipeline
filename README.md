@@ -74,7 +74,7 @@ Client receives analytics JSON
 }
 ```
 🗓️ Project Timeline & Implementation
-Day 1 — Bank Simulator (Local)
+### Day 1 — Bank Simulator (Local)
 
 Goal: Simulate a bank sending transactions.
 
@@ -91,7 +91,7 @@ Added optional looping to simulate multiple transactions per second
 Deliverable:
 ✔️ A working bank simulator capable of sending valid transaction payloads.
 
-Day 2 — API Gateway & Lambda Setup
+### Day 2 — API Gateway & Lambda Setup
 
 Goal: Receive transactions in AWS.
 
@@ -137,7 +137,7 @@ Execution role: Create new role with basic Lambda permissions
 
 Click Create function
 
-📊 Day 3 — Data Storage & Analytics
+### 📊 Day 3 — Data Storage & Analytics
 Step 2 — Create DynamoDB Table
 
 Purpose:
@@ -161,7 +161,7 @@ Region: us-east-2
 
 Click Create table
 
-Step 3 — Grant Lambda Write Permissions
+### Step 3 — Grant Lambda Write Permissions
 
 Why this matters:
 Lambda does not have database access by default. IAM permissions must be explicitly granted following the principle of least privilege.
@@ -184,7 +184,7 @@ IAM Inline Policy:
 ```
 Policy name: TransactionProcessorDDBWrite
 
-Step 4 — Lambda Code (Store Transactions)
+### Step 4 — Lambda Code (Store Transactions)
 
 Purpose:
 
@@ -242,7 +242,7 @@ def lambda_handler(event, context):
         'body': json.dumps({'message': 'Transaction stored successfully'})
     }
 ```
-Step 5 — Environment Variables
+### Step 5 — Environment Variables
 
 Add the following to the Lambda configuration:
 
