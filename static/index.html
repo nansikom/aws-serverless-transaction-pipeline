@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Analytics Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Transaction Analytics Dashboard</h1>
+            <div class="header-actions">
+                <button id="refreshBtn" class="btn btn-primary">
+                    <span class="refresh-icon">↻</span> Refresh
+                </button>
+                <div class="last-updated">
+                    Last updated: <span id="lastUpdated">Never</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="card card-blue">
+                <div class="card-icon">💰</div>
+                <div class="card-content">
+                    <h3>Total Credits</h3>
+                    <p class="card-value" id="totalCredits">$0.00</p>
+                    <span class="card-label">Incoming</span>
+                </div>
+            </div>
+
+                 <div class="card-icon">💸</div>
+                <div class="card-content">
+                    <h3>Total Debits</h3>
+                    <p class="card-value" id="totalDebits">$0.00</p>
+                    <span class="card-label">Outgoing</span>
+                </div>
+            </div>
+
+            <div class="card card-green">
+                <div class="card-icon">📈</div>
+                <div class="card-content">
+                    <h3>Net Balance</h3>
+                    <p class="card-value" id="netBalance">$0.00</p>
+                    <span class="card-label">Overall</span>
+                </div>
+            </div>
+
+            <div class="card card-purple">
+                <div class="card-icon">📊</div>
+                <div class="card-content">
+                    <h3>Total Transactions</h3>
+                    <p class="card-value" id="totalTransactions">0</p>
+                    <span class="card-label">Records</span>
+                </div>
+            </div>
+
+            <div class="card card-orange">
+                <div class="card-icon">📉</div>
+                <div class="card-content">
+                    <h3>Average Amount</h3>
+                    <p class="card-value" id="avgTransaction">$0.00</p>
+                    <span class="card-label">Per Transaction</span>
+                </div>
+            </div>
+
+            <div class="card card-teal">
+                <div class="card-icon">👥</div>
+                <div class="card-content">
+                    <h3>Active Accounts</h3>
+                    <p class="card-value" id="uniqueAccounts">0</p>
+                    <span class="card-label">Unique</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h2>Transaction Timeline</h2>
+                <canvas id="timelineChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Transaction Type Distribution</h2>
+                <canvas id="typeChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Account Analysis -->
+        <div class="chart-container full-width">
+            <h2>Account Performance</h2>
+            <canvas id="accountChart"></canvas>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="transactions-container">
+            <h2>Recent Transactions</h2>
+            <div class="table-wrapper">
+                <table id="recentTransactions">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Account</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="no-data">Loading transactions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>
