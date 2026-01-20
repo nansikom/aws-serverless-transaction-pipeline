@@ -193,7 +193,7 @@ Validate required fields
 Convert floats to Decimal (required by DynamoDB)
 
 Store transactions
-
+```
 import json
 import logging
 import os
@@ -239,7 +239,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps({'message': 'Transaction stored successfully'})
     }
-
+```
 Step 5 — Environment Variables
 
 Add the following to the Lambda configuration:
@@ -270,7 +270,7 @@ Runtime: Python 3.11
 IAM permission: dynamodb:Scan
 
 Environment variable: TABLE_NAME=Transactions
-
+```
 import json
 import os
 import boto3
@@ -295,7 +295,7 @@ def lambda_handler(event, context):
         'body': json.dumps(d_to_float(items))
     }
 
-
+```
 Expose via API Gateway:
 
 GET /analytics
